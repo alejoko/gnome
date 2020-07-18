@@ -9,6 +9,7 @@ import {
 //Custom Component Imports
 // import Header from "./Header";
 import { CitizenList } from "./CitizenList";
+import CitizenDetail from "./CitizenDetail";
 import { NotFound } from "./NotFound";
 
 const App = (): JSX.Element => {
@@ -18,6 +19,7 @@ const App = (): JSX.Element => {
 
         <Switch>
           <Route path="/" exact component={CitizenList} />
+          <Route path="/:id" component={CitizenDetail} />
           <Route path="/404" component={NotFound} />
 
           <Redirect to="/404" />

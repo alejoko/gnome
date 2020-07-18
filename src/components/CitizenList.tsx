@@ -3,15 +3,11 @@ import { BrastlewarkCitizen, fetchAllCitizens, getCitizens } from "../store/duck
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-interface ListProps {
-  citizens: BrastlewarkCitizen[];
-}
-
 export const Citizen: FunctionComponent<{ citizen: BrastlewarkCitizen }> = ({ citizen }) => {
   return (
     <div className="card" key={citizen.id}>
       <div className="title">
-        <img alt={citizen.name} src={citizen.name} />
+        <img alt={citizen.name} src={citizen.thumbnail} />
 
         <h2>
           <Link to={`${citizen.id}`}>
@@ -31,48 +27,5 @@ export const CitizenList: FunctionComponent = () => {
     dispatch(fetchAllCitizens());
   }, []);
 
-
-  
-  return (<div> { citizens.map((citizen: BrastlewarkCitizen) => <Citizen citizen={citizen} />) } </div>);
+  return (<div> { citizens.map((citizen: BrastlewarkCitizen) => <Citizen key={citizen.id} {... { citizen }} />) } </div>);
 };
-
-/*class _HeroesList extends React.Component<ListProps> {
-  componentDidMount() {
-    this.props.fetchAllHeroes();
-  }
-
-  addDefaultImgSrc = (e: React.BaseSyntheticEvent) => {
-    e.target.src = NotFound;
-  };
-
-  renderHeroes(): JSX.Element[] {
-    return this.props.heroes.map(
-      
-    
-    );
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="container">
-          {this.renderHeroes()}
-
-          {/* {this.props.heroes === "character with given name not found" ? (
-            <div>Errr</div>
-          ) : (
-            this.renderHeroes()
-          )} }
-        </div>
-      </div>
-    );
-  }
-}*/
-
-/*const mapStateToProps = (state: StoreState): { heroes: BrastlewarkCitizen[] } => {
-  return { heroes: state.citizens };
-};*/
-
-/* export const HeroesList = connect(mapStateToProps, { fetchAllCitizens })(
-  _HeroesList
-); */
