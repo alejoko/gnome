@@ -4,12 +4,19 @@ export interface FetchAllCitizens {
     payload: BrastlewarkCitizen[];
 }
 
+export interface SearchCitizens {
+    type: ActionTypes.SearchCitizens;
+    payload: string;
+}
+
 export enum ActionTypes {
     FetchAllCitizens,
+    SearchCitizens,
 };
 
 export type Action =
-| FetchAllCitizens;
+| FetchAllCitizens
+| SearchCitizens;
 
 export interface BrastlewarkCitizen {
     id: number;
@@ -21,4 +28,9 @@ export interface BrastlewarkCitizen {
     hair_color: number;
     professions: string[];
     friends: string[];
+}
+
+export interface CitizenStore {
+    data: BrastlewarkCitizen[];
+    needle: string;
 }

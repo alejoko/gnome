@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import { citicensReducer, BrastlewarkCitizen } from "./search";
+import { citizensReducer, BrastlewarkCitizen, CitizenStore } from "./citizen";
 
-export * from './search'
+export * from './citizen'
 
 export interface StoreState {
-  citizens: BrastlewarkCitizen[];
+  citizens: CitizenStore;
 }
 
 export const reducers = combineReducers<StoreState>({
-  citizens: citicensReducer,
+  citizens: citizensReducer,
 });

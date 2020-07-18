@@ -14,3 +14,8 @@ export const fetchAllCitizensAction = () => {
     });
   };
 };
+
+export const searchCitizensAction = (needle: string) => ({
+  type: ActionTypes.SearchCitizens,
+  payload: needle,
+})
