@@ -1,17 +1,17 @@
 
-export interface FetchAllCiticens {
-    type: ActionTypes.FetchAllCiticens;
-    payload: BrastlewarkCiticen[];
+export interface FetchAllCitizens {
+    type: ActionTypes.FetchAllCitizens;
+    payload: BrastlewarkCitizen[];
 }
 
 export enum ActionTypes {
-    FetchAllCiticens,
+    FetchAllCitizens,
 };
 
 export type Action =
-| FetchAllCiticens;
+| FetchAllCitizens;
 
-export interface BrastlewarkCiticen {
+export interface BrastlewarkCitizen {
     id: number;
     name: string;
     thumbnail: string;

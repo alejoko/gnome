@@ -1,10 +1,10 @@
-import { ActionTypes, Action, BrastlewarkCiticen } from "./types";
+import { ActionTypes, Action, BrastlewarkCitizen } from "./types";
 
-const initialState: BrastlewarkCiticen[] = [];
+const initialState: BrastlewarkCitizen[] = [];
 
-export const citicensReducer = (state: BrastlewarkCiticen[] = initialState, action: Action) => {
+export const citicensReducer = (state: BrastlewarkCitizen[] = initialState, action: Action) => {
   switch (action.type) {
-    case ActionTypes.FetchAllCiticens:
+    case ActionTypes.FetchAllCitizens:
       return action.payload;
 
     default:
