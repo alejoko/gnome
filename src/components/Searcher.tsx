@@ -19,7 +19,7 @@ export const Searcher: FunctionComponent = () => {
           onChange={handleInputChange}
           value={needle}
           type="text"
-          id="-searchbar"
+          id="searchbar"
           placeholder="Search for Citizens of Brastlewark..."
         />
         <i className="fa fa-search" aria-hidden="true"></i>
