@@ -1,4 +1,4 @@
-import { ActionTypes, Action, BrastlewarkCitizen, CitizenStore } from "./types";
+import { ActionTypes, Action, CitizenStore } from "./types";
 
 const initialState: CitizenStore = {
   data: [],

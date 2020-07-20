@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Searcher } from "./Searcher";
 import { List, ListRowRenderer, AutoSizer, CellMeasurer, CellMeasurerCache } from "react-virtualized";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import '../styles/components/CitizenList.scss'
 
 export const Citizen: FunctionComponent<{ index: number }> = ({ index }) => {
   const citizens = useSelector(getCitizens);
@@ -12,21 +14,27 @@ export const Citizen: FunctionComponent<{ index: number }> = ({ index }) => {
   return (
       <div className="card" key={citizen.id} >
         <div className="title">
-        <Link to={`${citizen.id}`}>
-          <img alt={citizen.name} src={citizen.thumbnail} />
-        </Link>
-        <h2>
+          <h2>
+            <Link to={`${citizen.id}`}>
+              {citizen.name}
+            </Link>
+          </h2>
+        </div>
+        <div className="image">
           <Link to={`${citizen.id}`}>
-            {citizen.name}
+            <LazyLoadImage
+              alt={citizen.name}
+              src={citizen.thumbnail}
+              height={200} 
+            />
           </Link>
-        </h2>
         </div>
       </div>
   );
 };
 
 const cache = new CellMeasurerCache({
-  fixedWidth: false,
+  fixedWidth: true,
   defaultHeight: 100
 });
 
@@ -75,7 +83,7 @@ export const CitizenList: FunctionComponent = () => {
 
   useEffect(() => {
     dispatch(fetchAllCitizens());
-  }, []);
+  }, [dispatch]);
 
   console.log(citizens.length)
 

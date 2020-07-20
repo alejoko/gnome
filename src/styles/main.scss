@@ -1,0 +1,19 @@
+@import "../../node_modules/font-awesome/css/font-awesome.min.css";
+
+body {
+    display: flex;
+    width: 100%;
+}
+
+html {
+    display: flex;
+    min-height: 100%;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+}
+

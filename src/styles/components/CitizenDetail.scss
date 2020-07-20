@@ -1,0 +1,32 @@
+.citizen-card {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #979899;
+    color: white;
+    font-family: copperplate;
+    text-align: center;
+    align-self: center;
+    title {
+        min-height: 70px;
+    }
+    img {
+        width: 100%;
+    }
+    .char {
+        display: flex;
+        margin: 5px 10px;
+        color: #AB3B3E;
+        .label {
+            float: right;
+        }
+        .value {
+            padding-left: 10px;
+            font-family: garamond;
+            color: #676464;
+            font-size: 14px;
+            text-align: initial;
+        }
+    }
+}

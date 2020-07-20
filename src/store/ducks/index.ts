@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { citizensReducer, BrastlewarkCitizen, CitizenStore } from "./citizen";
+import { citizensReducer, CitizenStore } from "./citizen";
 
 export * from './citizen'
 

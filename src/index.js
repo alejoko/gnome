@@ -10,6 +10,8 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import App from "./components/App";
 
+import './styles/main.scss'
+
 //Create Redux Store
 const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
 
