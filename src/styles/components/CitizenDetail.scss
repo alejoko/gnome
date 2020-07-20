@@ -19,14 +19,27 @@
         margin: 5px 10px;
         color: #AB3B3E;
         .label {
-            float: right;
+            position: relative;
+            top: 1px;
         }
         .value {
             padding-left: 10px;
             font-family: garamond;
-            color: #676464;
             font-size: 14px;
             text-align: initial;
+            color: white;
+
+            a:-webkit-any-link {
+                align-self: center;
+                text-align: center;
+                font-family: copperplate;
+                background-color: #979899;
+                color: white;
+                text-decoration: none;
+                font-size: 14px;
+                line-height: 18px;
+                display: flex;
+            }
         }
     }
 }

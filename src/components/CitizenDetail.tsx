@@ -15,8 +15,6 @@ const CitizenLink: FunctionComponent<{ friend: string }> = ({ friend }) => {
 }
 
 const CitizenDetail = ({ match } : CitizenDetailProps) => {
-
-  console.log('CitizenDetailProps', match);
   
   const { name , thumbnail, age, height, weight, hair_color, professions, friends } = useSelector(getCitizen(match.url.replace('/', ''))) || {};
 
@@ -47,11 +45,11 @@ const CitizenDetail = ({ match } : CitizenDetailProps) => {
             </div>
             <div className="char">
                 <div className="label">Weight</div>
-                <div className="value">{weight}</div>
+                <div className="value">{Number(weight).toFixed(2)}</div>
             </div>
             <div className="char">
                 <div className="label">Heigth</div>
-                <div className="value">{height}</div>
+                <div className="value">{Number(height).toFixed(2)}</div>
             </div>
             <div className="char">
                 <div className="label">Hair Color</div>
@@ -62,7 +60,7 @@ const CitizenDetail = ({ match } : CitizenDetailProps) => {
                 <div className="value">{(professions || []).join(', ')}</div>
             </div>
             <div className="char">
-                <div className="label">Friends</div>
+                { !!(friends || []).length && <div className="label">Friends</div> }
                 <div className="value">
                     { (friends || []).map(friend => <CitizenLink friend = { friend }/> ) }
                 </div>
