@@ -85,8 +85,6 @@ export const CitizenList: FunctionComponent = () => {
     dispatch(fetchAllCitizens());
   }, [dispatch]);
 
-  console.log(citizens.length)
-
   return (
     <>
       <Searcher />

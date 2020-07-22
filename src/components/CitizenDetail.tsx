@@ -62,7 +62,7 @@ const CitizenDetail = ({ match } : CitizenDetailProps) => {
             <div className="char">
                 { !!(friends || []).length && <div className="label">Friends</div> }
                 <div className="value">
-                    { (friends || []).map(friend => <CitizenLink friend = { friend }/> ) }
+                    { (friends || []).map((friend, index) => <CitizenLink key={index} friend = { friend }/> ) }
                 </div>
             </div>
             
